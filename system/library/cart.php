@@ -241,50 +241,28 @@ class Cart {
                             $size_factor = ($option_width/1000) * ($option_height/1000);
 
 							if ($product_query->row['product_id'] == 53) {
-                                                            $flyscreen_price = $size_factor * 60 + 300;
-                                                            if (isset($option_special) && $option_special) {
-                                                                $flyscreen_price += 100;
-                                                            }
-                                                            $flyscreen_price = $flyscreen_price * 2;
-                                                                /*
-								if ($option_height > 2700) {
-									$flyscreen_price = $size_factor*50 + 275;
-								} else {
-									$flyscreen_price = $size_factor*50 + 175;
-								}
-								if (isset($option_special) && $option_special) {
-									$flyscreen_price += 200;
-								}
-                                                                */
+                                $flyscreen_price = $size_factor * 60 + 300;
+                                if (isset($option_special) && $option_special) {
+                                    $flyscreen_price += 100;
+                                }
+                                $flyscreen_price = $flyscreen_price * 2;
 							} else {
-                                                            $flyscreen_price = $size_factor * 60 + 150;
-                                                            if (isset($option_special) && $option_special) {
-                                                                $flyscreen_price += 100;
-                                                            }
-                                                            $flyscreen_price = $flyscreen_price * 2;
-                                                                /*
-								if ($option_height > 2700) {
-									$flyscreen_price = $size_factor*50 + 225;
-								} else {
-									$flyscreen_price = $size_factor*50 + 125;
-								}
-								if (isset($option_special) && $option_special) {
-									$flyscreen_price += 100;
-								}
-                                                                */
+                                $flyscreen_price = $size_factor * 60 + 150;
+                                if (isset($option_special) && $option_special) {
+                                    $flyscreen_price += 100;
+                                }
+                                $flyscreen_price = $flyscreen_price * 2;
 							}
-
-                                                        switch ($customer_group_id) {
-                                                            case 2:
-                                                                $flyscreen_price = $flyscreen_price / 2;
-                                                                break;
-                                                            case 3:
-                                                                $flyscreen_price = $flyscreen_price / 2 * 0.9;
-                                                                break;
-                                                            default:
-                                                                $flyscreen_price = $flyscreen_price;
-                                                        }
-
+                            switch ($customer_group_id) {
+                                case 2:
+                                    $flyscreen_price = $flyscreen_price / 2;
+                                    break;
+                                case 3:
+                                    $flyscreen_price = $flyscreen_price / 2 * 0.9;
+                                    break;
+                                default:
+                                    $flyscreen_price = $flyscreen_price;
+                            }
 							$flyscreen_price = $flyscreen_price/1.1;
                         }
                     }

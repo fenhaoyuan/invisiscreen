@@ -815,7 +815,7 @@ function calculateFlyscreenPrice(calculate) {
     var w = $('.option-flyscreen-width input#Width_value').val();
     var h = $('.option-flyscreen-height input#Height_value').val();
     var c = $('.option-flyscreen-color input:checked').val();
-	var sc = $('.option-special-colour input').val();
+    var sc = $('.option-special-colour input').val();
 
     // Error check
     if (w != '') {
@@ -858,50 +858,30 @@ function calculateFlyscreenPrice(calculate) {
     if (w && h && c) {
         var size_factor = (w/1000) * (h/1000);
 
-		var price;
-		if (<?php echo $product_id; ?> == 53) {
-                    price = size_factor * 60 + 300;
-                    if (sc) {
-                        price += 100;
-                    }
-                    price = price * 2;
-                        /*
-			if (h > 2700) {
-				price = size_factor * 50 + 275;
-			} else {
-				price = size_factor * 50 + 175;
-			}
-			if (sc) {
-				price += 200;
-			}
-                        */
-		} else {
-                    price = size_factor * 60 + 150;
-                    if (sc) {
-                        price += 100;
-                    }
-                    price = price * 2;
-                        /*
-			if (h > 2700) {
-				price = size_factor * 50 + 225;
-			} else {
-				price = size_factor * 50 + 125;
-			}
-			if (sc) {
-				price += 100;
-			}
-                        */
-		}
-                switch (customer_group_id) {
-                    case 2:
-                        price = price / 2;
-                        break;
-                    case 3:
-                        price = price / 2 * 0.9;
-                        break;
-                    default:
-		        price = price;
-                }
+        var price;
+        if (<?php echo $product_id; ?> == 53) {
+            price = size_factor * 60 + 300;
+            if (sc) {
+                price += 100;
+            }
+            price = price * 2;
+        } else {
+            price = size_factor * 60 + 150;
+            if (sc) {
+                price += 100;
+            }
+            price = price * 2;
+        }
+        switch (customer_group_id) {
+            case 2:
+                price = price / 2;
+                break;
+            case 3:
+                price = price / 2 * 0.9;
+                break;
+            default:
+                price = price;
+        }
 
         $('#custom-price').val(price.toFixed(2));
         $('.buy .price').html('$'+ price.toFixed(2)+'<span class="price-gst">inc. GST</span>');
