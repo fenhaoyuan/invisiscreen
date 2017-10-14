@@ -1,3 +1,58 @@
+#right-sm,
+.right .share {
+    display: none;
+}
+
+.product-info .left .image,
+.product-info .image-additional img {
+    padding: 0px;
+    margin: 0
+}
+
+.product-info #image,
+.product-info .image-additional img {
+    width: 98px;
+    height: 98px;
+    padding: 10px;
+    margin: 0px;
+}
+
+.product-info .image-additional a {
+    margin: 20px 0 0 0;
+}
+
+/*************************************************/
+@media (min-width: 768px) {
+    .product-info .image-additional {
+        width: 120px;
+        margin: 0px;
+    }
+
+    .product-info > .left {
+        margin: 0 10px 0 0;
+    }
+
+    .product-info > .left + .right {
+        width: 584px;
+        margin: 0 0 0 10px;
+    }
+}
+/*************************************************/
+
+/*************************************************/
+@media (min-width: 980px) {
+    .product-info > .left {
+        margin: 0 10px 0 0;
+    }
+
+    .product-info > .left + .right {
+        width: 800px;
+        margin: 0 0 0 10px;
+    }
+}
+/*************************************************/
+
+
 .product-info .product-name h1 {
     font-size: 16px;
     font-weight: bold;
@@ -9,8 +64,8 @@
 
 .product-info .price .price-gst {
     margin-left: 5px;
-	font-size: 14px;
-	font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .product-info .options h4 {
@@ -24,13 +79,13 @@
 }
 
 .product-info .custom-option .option-l {
-  float: none;
-  width: auto;
+    float: none;
+    width: auto;
 }
 
 .product-info .custom-option .option-l b,
 .product-info .custom-option .option-l span.required {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 .product-info .custom-option .option-l span.option-range {
@@ -38,7 +93,7 @@
 }
 
 .product-info .custom-option .option-r {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .product-info .custom-option span.error {
@@ -46,40 +101,40 @@
 }
 
 .product-info .custom-option.option-flyscreen-width {
-  float: left;
-  width: 160px;
-  margin-right: 10px;
+    float: left;
+    width: 160px;
+    margin-right: 10px;
 }
 .product-info .custom-option.option-flyscreen-height {
-  float: left;
-  width: 130px;
+    float: left;
+    width: 130px;
 }
 .product-info .custom-option.option-flyscreen-width .option-r input,
 .product-info .custom-option.option-flyscreen-height .option-r input {
-  width: 90px;
+    width: 90px;
 }
 .product-info .custom-option.option-flyscreen-width .option-r .custom-option-x {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .product-info .options {
-  padding: 15px 0;
+    padding: 15px 0;
 }
 
 .product-info .custom-option.option-flyscreen-color {
-  clear: both;
+    clear: both;
 }
 .product-info .custom-option.option-flyscreen-color .option-image {
-  overflow: hidden;
+    overflow: hidden;
 }
 .product-info .custom-option.option-flyscreen-color .option-image .option-one-image {
-  float: left;
-  margin-right: 12px;
-  margin-bottom: 6px;
-  text-align: center;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 6px;
+    text-align: center;
 }
 .product-info .custom-option.option-flyscreen-color .option-image img {
-  margin: 0;
+    margin: 0;
 }
 .product-info .custom-option.option-flyscreen-color .option-image .option-one-image label {
     font-weight: bold;
@@ -89,35 +144,35 @@
 }
 
 .product-info .custom-option.option-special-colour {
-	overflow: hidden;
-	clear: both;
+    overflow: hidden;
+    clear: both;
 }
 .product-info .custom-option.option-special-colour .option-l {
-	float: left;
+    float: left;
 }
 .product-info .custom-option.option-special-colour .option-r {
-	float: right;
+    float: right;
 }
 
 .product-info .custom-option.option-reference-number {
-	overflow: hidden;
-	clear: both;
+    overflow: hidden;
+    clear: both;
 }
 .product-info .custom-option.option-reference-number .option-l {
-	float: left;
+    float: left;
 }
 .product-info .custom-option.option-reference-number .option-r {
-	float: right;
+    float: right;
 }
 
 .product-info .custom-option textarea {
-	width: 98%;
-	height: 50px;
+    width: 98%;
+    height: 50px;
 }
 
 
 .span9 .row-fluid, .span10 .row-fluid, .span11 .row-fluid, .span12 .row-fluid {
-  padding: 0;
+    padding: 0;
 }
 
 #t-header #search {
@@ -144,9 +199,9 @@
 }
 
 .es-carousel .name {
-	height: 36px;
+    height: 36px;
 }
 
 input {
-	cursor: auto;
+    cursor: auto;
 }
