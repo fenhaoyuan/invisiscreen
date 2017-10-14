@@ -1,0 +1,152 @@
+.product-info .product-name h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-info .price {
+    padding: 5px;
+}
+
+.product-info .price .price-gst {
+    margin-left: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.product-info .options h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-info .custom-option {
+    margin-bottom: 10px;
+}
+
+.product-info .custom-option .option-l {
+  float: none;
+  width: auto;
+}
+
+.product-info .custom-option .option-l b,
+.product-info .custom-option .option-l span.required {
+  font-size: 15px;
+}
+
+.product-info .custom-option .option-l span.option-range {
+    color: red;
+}
+
+.product-info .custom-option .option-r {
+  margin-left: 0;
+}
+
+.product-info .custom-option span.error {
+    display: none;
+}
+
+.product-info .custom-option.option-flyscreen-width {
+  float: left;
+  width: 160px;
+  margin-right: 10px;
+}
+.product-info .custom-option.option-flyscreen-height {
+  float: left;
+  width: 130px;
+}
+.product-info .custom-option.option-flyscreen-width .option-r input,
+.product-info .custom-option.option-flyscreen-height .option-r input {
+  width: 90px;
+}
+.product-info .custom-option.option-flyscreen-width .option-r .custom-option-x {
+  margin-left: 20px;
+}
+
+.product-info .options {
+  padding: 15px 0;
+}
+
+.product-info .custom-option.option-flyscreen-color {
+  clear: both;
+}
+.product-info .custom-option.option-flyscreen-color .option-image {
+  overflow: hidden;
+}
+.product-info .custom-option.option-flyscreen-color .option-image .option-one-image {
+  float: left;
+  margin-right: 12px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.product-info .custom-option.option-flyscreen-color .option-image img {
+  margin: 0;
+}
+.product-info .custom-option.option-flyscreen-color .option-image .option-one-image label {
+    font-weight: bold;
+}
+.product-info .custom-option.option-flyscreen-color .option-image .option-one-image input {
+    margin: 0px;
+}
+
+.product-info .custom-option.option-special-colour {
+	overflow: hidden;
+	clear: both;
+}
+.product-info .custom-option.option-special-colour .option-l {
+	float: left;
+}
+.product-info .custom-option.option-special-colour .option-r {
+	float: right;
+}
+
+.product-info .custom-option.option-reference-number {
+	overflow: hidden;
+	clear: both;
+}
+.product-info .custom-option.option-reference-number .option-l {
+	float: left;
+}
+.product-info .custom-option.option-reference-number .option-r {
+	float: right;
+}
+
+.product-info .custom-option textarea {
+	width: 98%;
+	height: 50px;
+}
+
+
+.span9 .row-fluid, .span10 .row-fluid, .span11 .row-fluid, .span12 .row-fluid {
+  padding: 0;
+}
+
+#t-header #search {
+    top: 40px;
+    right: 200px;
+}
+
+
+.product-related .bx-wrapper div.bx-next,
+.product-related .bx-wrapper div.bx-prev {
+    bottom: 430px;
+}
+
+.recalculate-button {
+    margin-left: 20px !important;
+    background-color: #1D1C62;
+    border-color: #1D1C62 #1D1C62 #1D1C62 #1D1C62;
+    color: #FFFFFF!important;
+}
+
+.recalculate-button:hover {
+    background-color: #8E88E8;
+    border-color: #1D1C62;
+}
+
+.es-carousel .name {
+	height: 36px;
+}
+
+input {
+	cursor: auto;
+}
