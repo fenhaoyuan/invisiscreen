@@ -3,54 +3,18 @@
     display: none;
 }
 
-.product-info .left .image,
-.product-info .image-additional img {
-    padding: 0px;
-    margin: 0
+.product-info > .left + .right {
+    width: 586px;
+    margin-left: 10px;
+    margin-right: 0px;
 }
 
-.product-info #image,
-.product-info .image-additional img {
-    width: 98px;
-    height: 98px;
-    padding: 10px;
-    margin: 0px;
-}
-
-.product-info .image-additional a {
-    margin: 20px 0 0 0;
-}
-
-/*************************************************/
-@media (min-width: 768px) {
-    .product-info .image-additional {
-        width: 120px;
-        margin: 0px;
-    }
-
-    .product-info > .left {
-        margin: 0 10px 0 0;
-    }
-
+@media (max-width: 979px) and (min-width: 768px) {
     .product-info > .left + .right {
-        width: 584px;
-        margin: 0 0 0 10px;
+        width: 357px !important;
+        margin-right: 0 !important;
     }
 }
-/*************************************************/
-
-/*************************************************/
-@media (min-width: 980px) {
-    .product-info > .left {
-        margin: 0 10px 0 0;
-    }
-
-    .product-info > .left + .right {
-        width: 800px;
-        margin: 0 0 0 10px;
-    }
-}
-/*************************************************/
 
 
 .product-info .product-name h1 {
@@ -89,7 +53,7 @@
 }
 
 .product-info .custom-option .option-l span.option-range {
-    color: red;
+    color: #cc0000;
 }
 
 .product-info .custom-option .option-r {
@@ -129,15 +93,20 @@
 }
 .product-info .custom-option.option-flyscreen-color .option-image .option-one-image {
     float: left;
+    width: 70px;
+    height: 90px;
     margin-right: 12px;
     margin-bottom: 6px;
     text-align: center;
 }
 .product-info .custom-option.option-flyscreen-color .option-image img {
     margin: 0;
+    width: 70px;
+    height: 40px;
 }
 .product-info .custom-option.option-flyscreen-color .option-image .option-one-image label {
-    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
 }
 .product-info .custom-option.option-flyscreen-color .option-image .option-one-image input {
     margin: 0px;

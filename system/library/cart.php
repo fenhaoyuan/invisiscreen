@@ -162,7 +162,7 @@ class Cart {
                             } elseif ($option_query->row['name'] == 'Height') {
                                 $option_height = $option_value;
                                 //echo $option_height;
-                            }  elseif ($option_query->row['name'] == 'Color') {
+                            }  elseif ($option_query->row['name'] == 'Colour') {
                                 $option_color = $option_value;
                                 //echo $option_color;
                             }   elseif ($option_query->row['name'] == 'Special Colour') {
@@ -236,34 +236,45 @@ class Cart {
 
                     // Stephen, calculate price if it's a flyscreen
                     $flyscreen_price = 0;
-                    if ($product_query->row['product_id'] >= 50 && $product_query->row['product_id'] <= 53) {
+                    if (true) {
                         if ($option_width && $option_height && $option_color) {
                             $size_factor = ($option_width/1000) * ($option_height/1000);
 
-							if ($product_query->row['product_id'] == 53) {
-                                $flyscreen_price = $size_factor * 60 + 300;
-                                if (isset($option_special) && $option_special) {
-                                    $flyscreen_price += 100;
-                                }
-                                $flyscreen_price = $flyscreen_price * 2;
-							} else {
-                                $flyscreen_price = $size_factor * 60 + 150;
-                                if (isset($option_special) && $option_special) {
-                                    $flyscreen_price += 100;
-                                }
-                                $flyscreen_price = $flyscreen_price * 2;
+							switch ($product_query->row['product_id']) {
+                                case 52:
+                                    $flyscreen_price = $size_factor * 60 + 150;
+                                    if (isset($option_special) && $option_special) {
+                                        $flyscreen_price += 100;
+                                    }
+                                    break;
+                                case 53:
+                                    $flyscreen_price = $size_factor * 60 + 300;
+                                    if (isset($option_special) && $option_special) {
+                                        $flyscreen_price += 100;
+                                    }
+                                    break;
+                                case 54:
+                                case 55:
+                                    if ($option_height <= 900) $flyscreen_price = 165;
+                                    else if ($option_height <= 1700) $flyscreen_price = 187;
+                                    else $flyscreen_price = 220;
+                                    if (isset($option_special) && $option_special) {
+                                        $flyscreen_price += 100;
+                                    }
+                                    break;
 							}
+
                             switch ($customer_group_id) {
                                 case 2:
-                                    $flyscreen_price = $flyscreen_price / 2;
+                                    $flyscreen_price = $flyscreen_price;
                                     break;
                                 case 3:
-                                    $flyscreen_price = $flyscreen_price / 2 * 0.9;
+                                    $flyscreen_price = $flyscreen_price * 0.9;
                                     break;
                                 default:
-                                    $flyscreen_price = $flyscreen_price;
+                                    $flyscreen_price = $flyscreen_price * 2;
                             }
-							$flyscreen_price = $flyscreen_price/1.1;
+							$flyscreen_price = $flyscreen_price / 1.1;
                         }
                     }
 

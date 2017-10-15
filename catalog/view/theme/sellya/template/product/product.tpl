@@ -141,7 +141,7 @@
               case 'Height':
                   $option_addition_class .= " option-flyscreen-height";
                   break;
-              case 'Color':
+              case 'Colour':
                   $option_addition_class .= " option-flyscreen-color";
                   break;
 			  case 'Special Colour':
@@ -374,7 +374,7 @@
           <input type="button" class="inc" value=" " />
           <?php } ?>
           <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-          &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-exclusive" onclick="return calculateFlyscreenPrice(true);" />
+          &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="ADD TO ORDER" id="button-cart" class="button-exclusive" onclick="return addThisProduct();" />
           </div><br />
           <!--
         <div class="wishlist-compare"><a onclick="addToWishList('<?php echo $product_id; ?>');"><span class="wishlist"></span><?php echo $button_wishlist; ?></a>
@@ -691,6 +691,9 @@ $('#button-cart, #button-calculate-price').bind('click', function() {
 			}
 
 			if (json['success']) {
+                window.location = "/index.php?route=checkout/cart";
+
+                /*
 				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/sellya/image/close.png" alt="" class="close" /></div>');
 
 				$('.success').fadeIn('slow');
@@ -698,6 +701,7 @@ $('#button-cart, #button-calculate-price').bind('click', function() {
 				$('#cart-total').html(json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
+                */
 			}
 		}
 	});
@@ -829,7 +833,7 @@ function calculateFlyscreenPrice(calculate) {
             return false;
         }
     } else if (calculate) {
-        alert('Please enter a width value in order to calculate the price.');
+        alert('Width is required.');
         $('.option-flyscreen-width input#Width_value').focus();
         return false;
     }
@@ -845,42 +849,48 @@ function calculateFlyscreenPrice(calculate) {
             return false;
         }
     } else if (calculate) {
-        alert('Please enter a height value in order to calculate the price.');
+        alert('Height is required.');
         $('.option-flyscreen-height input#Height_value').focus();
         return false;
     }
 
     if (!c && calculate) {
-        alert('Please select a color in order to calculate the price.');
+        alert('Colour is required');
         return false;
     }
 
     if (w && h && c) {
         var size_factor = (w/1000) * (h/1000);
+        var product_id = <?php echo $product_id; ?>;
 
-        var price;
-        if (<?php echo $product_id; ?> == 53) {
-            price = size_factor * 60 + 300;
-            if (sc) {
-                price += 100;
-            }
-            price = price * 2;
-        } else {
-            price = size_factor * 60 + 150;
-            if (sc) {
-                price += 100;
-            }
-            price = price * 2;
+        var price = 0;
+        switch (product_id) {
+            case 52:
+                price = size_factor * 60 + 150;
+                if (sc) price += 100;
+                break;
+            case 53:
+                price = size_factor * 60 + 300;
+                if (sc) price += 100;
+                break;
+            case 54:
+            case 55:
+                if (h <= 900) price = 165;
+                else if (h <= 1700) price = 187;
+                else price = 220;
+                if (sc) price += 100;
+                break;
         }
+
         switch (customer_group_id) {
             case 2:
-                price = price / 2;
+                price = price;
                 break;
             case 3:
-                price = price / 2 * 0.9;
+                price = price * 0.9;
                 break;
             default:
-                price = price;
+                price = price * 2;
         }
 
         $('#custom-price').val(price.toFixed(2));
@@ -889,6 +899,10 @@ function calculateFlyscreenPrice(calculate) {
 
         return true;
     }
+}
+
+function addThisProduct() {
+    return calculateFlyscreenPrice(true)
 }
 </script>
 <?php echo $footer; ?>
